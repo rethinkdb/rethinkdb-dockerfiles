@@ -9,8 +9,7 @@ ENV RETHINKDB_PACKAGE_VERSION 1.14.1-0ubuntu1~trusty
 # Add the RethinkDB repository and public key
 RUN echo "deb http://download.rethinkdb.com/apt trusty main" > /etc/apt/sources.list.d/rethinkdb.list
 RUN apt-key add /temp/pubkey.gpg && rm /temp/pubkey.gpg
-RUN apt-get update
-RUN apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION
+RUN apt-get update && apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION
 
 # Remove package lists for size
 RUN rm -rf /var/lib/apt/lists/*
