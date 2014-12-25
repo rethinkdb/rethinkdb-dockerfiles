@@ -21,6 +21,9 @@ WORKDIR /data
 
 CMD ["rethinkdb", "--bind", "all"]
 
+# process
 EXPOSE 28015
-EXPOSE 8080 # web UI
-EXPOSE 29015 # cluster
+# web UI
+EXPOSE 8080
+# cluster
+EXPOSE 29015
