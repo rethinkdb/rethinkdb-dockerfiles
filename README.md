@@ -2,6 +2,10 @@
 
 Dockerfiles for past and present versions of RethinkDB.
 
+## Documentation
+
+https://github.com/docker-library/docs/blob/master/rethinkdb/README.md
+
 ## Procedure for updating
 
 This is mostly a checklist for my own personal use.
