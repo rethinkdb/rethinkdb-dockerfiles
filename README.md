@@ -15,18 +15,13 @@ This is mostly a checklist for my own personal use.
 2. Look up what the new package names are by going to
    http://download.rethinkdb.com/apt/pool/jessie/main/r/rethinkdb/ and
    http://download.rethinkdb.com/apt/pool/trusty/main/r/rethinkdb/ etc.
-3. Copy the files for the last release on `jessie` and `trusty` for all the
-   releases I've missed, and replace the package name in the Dockerfiles.
-   *This part could also stand to be improved.* Most recent example:
+3. Run `./cut-new-release.sh` for each missing release:
 
-   ````bash
-  for distro in jessie trusty utopic wheezy; do
-    cp -r $distro/1.16.0 $distro/1.16.1
-    sed -i 's/1.16.0+1/1.16.1/' $distro/1.16.1/Dockerfile
-    cp -r $distro/1.16.0 $distro/1.16.2
-    sed -i 's/1.16.0+1/1.16.2+1/' $distro/1.16.2/Dockerfile
-  done
-   ````
+   ```bash
+   ./cut-new-release.sh 1.16.1
+   ./cut-new-release.sh 1.16.2 +1
+   # etc...
+   ```
 
 4. Commit this, push it to GitHub, and note the hash.
 5. Go to https://github.com/docker-library/official-images/edit/master/library/rethinkdb
