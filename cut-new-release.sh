@@ -5,6 +5,7 @@ new=$1
 suffix=$2
 
 for distro in jessie trusty utopic wheezy; do
+  cp docker-entrypoint.sh "./$distro/$new/"
   cp -r "./$distro/$base" "./$distro/$new"
   sed -i "s/$base/$new$suffix/" "./$distro/$new/Dockerfile"
 done

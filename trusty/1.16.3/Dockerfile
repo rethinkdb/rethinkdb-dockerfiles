@@ -13,11 +13,13 @@ RUN apt-get update \
 	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
+COPY docker-entrypoint.sh /entrypoint.sh
+
 VOLUME ["/data"]
 
 WORKDIR /data
 
-ENTRYPOINT ["rethinkdb"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["--bind","all"]
 
