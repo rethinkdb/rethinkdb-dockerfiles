@@ -13,11 +13,15 @@ RUN apt-get update \
 	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
+COPY docker-entrypoint.sh /entrypoint.sh
+
 VOLUME ["/data"]
 
 WORKDIR /data
 
-CMD ["rethinkdb", "--bind", "all"]
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["--bind","all"]
 
 #   process cluster webui
 EXPOSE 28015 29015 8080
