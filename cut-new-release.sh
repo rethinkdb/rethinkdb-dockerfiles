@@ -4,7 +4,7 @@ base=2.0.1
 new=$1
 suffix=$2
 
-for distro in jessie trusty utopic wheezy; do
+for distro in jessie trusty utopic wheezy vivid; do
   cp -r "./$distro/$base" "./$distro/$new"
   sed -i "s/$base/$new$suffix/" "./$distro/$new/Dockerfile"
 done
