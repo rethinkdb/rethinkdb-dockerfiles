@@ -2,7 +2,7 @@
 # re-generate Dockerfile for requested distribution(s)
 
 dists=( ubuntu:trusty ubuntu:utopic debian:wheezy debian:jessie )
-versions=( 1.15.1 1.15.2 1.15.3 1.16.0 1.16.1 1.16.2 1.16.3 2.0.0 2.0.1 2.0.2 )
+versions=( 1.15.1 1.15.2 1.15.3 1.16.0 1.16.1 1.16.2 1.16.3 2.0.0 2.0.1 2.0.2 2.0.3 )
 
 DOCKERFILE_TEMPLATE=Dockerfile.tpl
 
