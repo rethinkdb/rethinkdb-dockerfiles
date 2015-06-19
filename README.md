@@ -4,6 +4,8 @@ Dockerfiles for past and present versions of RethinkDB.
 
 ## New
 
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
+
 Start script is now [Tutum](http://tutum.co) compatible.
 All is needed to start a 2+ node cluster is do a one-to-one port mapping 
 (8080->8080, 28015->28015, 29015->29015) and that's it.
