@@ -2,6 +2,9 @@
 
 Dockerfiles for past and present versions of RethinkDB.
 
+[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=flat-square)](https://registry.hub.docker.com/u/anapsix/rethinkdb/) 
+[![](https://badge.imagelayers.io/anapsix/rethinkdb:latest.svg)](https://imagelayers.io/?images=anapsix/rethinkdb:latest)
+
 ## New
 
 [![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
