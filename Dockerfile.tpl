@@ -1,6 +1,6 @@
 FROM %dist%:%release%
 
-MAINTAINER Stuart P. Bentley <stuart@testtrack4.com>
+MAINTAINER Anastas Dancha <anapsix@random.io>
 
 # Add the RethinkDB repository and public key
 # "RethinkDB Packaging <packaging@rethinkdb.com>" http://download.rethinkdb.com/apt/pubkey.gpg
