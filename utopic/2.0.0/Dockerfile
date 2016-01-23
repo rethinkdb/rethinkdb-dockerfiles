@@ -1,6 +1,6 @@
 FROM ubuntu:utopic
 
-MAINTAINER Stuart P. Bentley <stuart@testtrack4.com>
+MAINTAINER Daniel Alan Miller <dalanmiller@rethinkdb.com>
 
 # Add the RethinkDB repository and public key
 # "RethinkDB Packaging <packaging@rethinkdb.com>" http://download.rethinkdb.com/apt/pubkey.gpg
