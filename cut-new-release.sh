@@ -9,7 +9,7 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-for distro in jessie trusty utopic vivid wily; do
+for distro in jessie stretch trusty utopic vivid wily; do
   mkdir "./$distro/$new"
   sed -e "s/$base/$new$suffix/" "./$distro/$base/Dockerfile" \
     >"./$distro/$new/Dockerfile"
