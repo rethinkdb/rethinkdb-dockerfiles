@@ -2,6 +2,8 @@ FROM ubuntu:utopic
 
 MAINTAINER Daniel Alan Miller <dalanmiller@rethinkdb.com>
 
+HEALTHCHECK CMD nc -zv 127.0.0.1 28015
+
 # Add the RethinkDB repository and public key
 # "RethinkDB Packaging <packaging@rethinkdb.com>" http://download.rethinkdb.com/apt/pubkey.gpg
 RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 1614552E5765227AEC39EFCFA7E00EF33A8F2399
