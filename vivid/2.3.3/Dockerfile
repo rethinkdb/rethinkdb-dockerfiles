@@ -12,7 +12,7 @@ RUN echo "deb http://download.rethinkdb.com/apt vivid main" > /etc/apt/sources.l
 ENV RETHINKDB_PACKAGE_VERSION 2.3.3~0vivid
 
 RUN apt-get update \
-	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
+	&& apt-get install -y netcat rethinkdb=$RETHINKDB_PACKAGE_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/data"]

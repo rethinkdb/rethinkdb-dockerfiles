@@ -12,7 +12,7 @@ RUN echo "deb http://download.rethinkdb.com/apt xenial main" > /etc/apt/sources.
 ENV RETHINKDB_PACKAGE_VERSION 2.3.5~0xenial
 
 RUN apt-get update \
-	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
+	&& apt-get install -y netcat rethinkdb=$RETHINKDB_PACKAGE_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
 VOLUME ["/data"]
