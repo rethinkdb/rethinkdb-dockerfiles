@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-base=2.3.1
+base=2.3.6
 new=$1
 suffix=$2
 
