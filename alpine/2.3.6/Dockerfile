@@ -3,7 +3,7 @@ LABEL      mantainer="Daniel Alan Miller <dalanmiller@rethinkdb.com>"
 ENV        RETHINKDB_PACKAGE_VERSION=2.3.6-r6
 RUN        apk add --no-cache \
                jq \
-               rethinkdb=$RETHINKDB_VERSION
+               rethinkdb=$RETHINKDB_PACKAGE_VERSION
 VOLUME     ["/data"]
 WORKDIR    /data
 CMD        ["rethinkdb", "--bind", "all"]
