@@ -1,10 +1,10 @@
 FROM       alpine
-LABEL      mantainer="Slava Kalashnikov <xemuliam@gmail.com>"
+LABEL      mantainer="Daniel Alan Miller <dalanmiller@rethinkdb.com>"
 ARG        RETHINKDB_PACKAGE_VERSION=2.3.6-r6
 RUN        apk add --no-cache \
                jq \
                rethinkdb=$RETHINKDB_VERSION
-EXPOSE     28015 29015 8080
-VOLUME     /data
+VOLUME     ["/data"]
 WORKDIR    /data
-CMD       rethinkdb --bind all
+CMD        ["rethinkdb", "--bind", "all"]
+EXPOSE     28015 29015 8080
