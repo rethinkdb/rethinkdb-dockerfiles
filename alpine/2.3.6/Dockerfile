@@ -1,6 +1,6 @@
 FROM       alpine
 LABEL      mantainer="Slava Kalashnikov <xemuliam@gmail.com>"
-ARG        RETHINKDB_VERSION=2.3.6-r6
+ARG        RETHINKDB_PACKAGE_VERSION=2.3.6-r6
 RUN        apk add --no-cache \
                jq \
                rethinkdb=$RETHINKDB_VERSION
