@@ -1,6 +1,6 @@
 FROM       alpine
 LABEL      mantainer="Daniel Alan Miller <dalanmiller@rethinkdb.com>"
-ARG        RETHINKDB_PACKAGE_VERSION=2.3.6-r6
+ENV        RETHINKDB_PACKAGE_VERSION=2.3.6-r6
 RUN        apk add --no-cache \
                jq \
                rethinkdb=$RETHINKDB_VERSION
