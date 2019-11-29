@@ -1,15 +1,13 @@
 FROM ubuntu:bionic
 
-MAINTAINER Gabor Boros <gabor.brs@gmail.com>
-ENV RETHINKDB_PACKAGE_VERSION 2.3.7~0bionic
-
-
 RUN apt -qqy update \
     && apt install -y --no-install-recommends ca-certificates gnupg2 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-key adv --fetch-keys https://download.rethinkdb.com/apt/pubkey.gpg \
-    && echo "deb http://download.rethinkdb.com/apt bionic main" > /etc/apt/sources.list.d/rethinkdb.list
+RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 1D85E93F801BB43F \
+    && echo "deb https://download.rethinkdb.com/apt bionic main" > /etc/apt/sources.list.d/rethinkdb.list
+
+ENV RETHINKDB_PACKAGE_VERSION 2.3.7~0bionic
 
 RUN apt -qqy update \
 	&& apt install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
