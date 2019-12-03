@@ -6,17 +6,28 @@ Dockerfiles for past and present versions of RethinkDB.
 
 https://github.com/docker-library/docs/blob/master/rethinkdb/README.md
 
+## Currently supported distributions
+
+The following base images are supported for containerized RethinkDB servers.
+
+* Ubuntu Xenial
+* Ubuntu Bionic
+* Ubuntu Disco
+* Ubuntu Eoan
+* CentOs 7
+* CentOs 8
+
 ## Procedure for updating
 
 After creating a commit for the new release package using `./cut-new-release.sh`:
 
    ```bash
    # example
-   ./cut-new-release.sh 1.16.1
-   
+   ./cut-new-release.sh 2.3.7
+
    # if package version includes a suffix like "+1",
    # pass that suffix as the second argument
-   ./cut-new-release.sh 1.16.2 +1 
+   ./cut-new-release.sh 2.3.7 +1
    ```
 
 Note the hash of the commit and push it to GitHub.
