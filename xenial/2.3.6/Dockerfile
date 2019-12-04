@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN apt-get update -qq \
+RUN apt-get update -qqy \
     && apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
