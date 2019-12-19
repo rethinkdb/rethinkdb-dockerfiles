@@ -1,13 +1,11 @@
 #! /usr/bin/env bash
 
-BASE_VERSION=2.3.6
+BASE_VERSION=2.4.0
 NEW_VERSION=$1
 SUFFIX=$2
 
-# NOTE: Xenial and CentOS 7 are disabled until we upload 2.3.7
 # packages for them to downloads.rethinkdb.com
-# DISTROS="xenial bionic disco eoan centos7 centos8"
-DISTROS="bionic disco eoan centos8"
+DISTROS="xenial bionic disco eoan centos7 centos8 jessie stretch buster"
 
 function bootstrap_and_build {
   for DISTRO in $DISTROS; do
