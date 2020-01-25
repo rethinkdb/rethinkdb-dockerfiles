@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:buster-slim
 
 RUN apt-get -qqy update \
     && apt-get install -y --no-install-recommends ca-certificates gnupg2 \

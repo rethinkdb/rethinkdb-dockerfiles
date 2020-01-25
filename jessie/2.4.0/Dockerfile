@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:jessie-slim
 
 RUN apt-get -qqy update \
     && apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg2 \

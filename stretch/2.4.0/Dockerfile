@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 
 RUN apt-get -qqy update \
     && apt-get install -y --no-install-recommends apt-transport-https dirmngr ca-certificates gnupg2 \
