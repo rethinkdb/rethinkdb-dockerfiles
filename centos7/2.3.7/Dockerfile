@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN curl -L https://download.rethinkdb.com/centos/7/`uname -m`/rethinkdb.repo > /etc/yum.repos.d/rethinkdb.repo
+ADD rethinkdb.repo /etc/yum.repos.d/rethinkdb.repo
 
 ENV RETHINKDB_PACKAGE_VERSION 2.3.7
 

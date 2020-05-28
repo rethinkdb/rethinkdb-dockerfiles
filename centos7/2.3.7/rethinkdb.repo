@@ -1,0 +1,6 @@
+[rethinkdb]
+name=RethinkDB
+enabled=1
+baseurl=https://download.rethinkdb.com/repository/centos/7/x86_64/
+gpgkey=https://download.rethinkdb.com/repository/raw/pubkey.gpg
+gpgcheck=1
