@@ -5,8 +5,8 @@ ENV RETHINKDB_PACKAGE_VERSION 2.3.7
 RUN echo $'[rethinkdb]\n\
 name=RethinkDB\n\
 enabled=1\n\
-baseurl=https://download2.rethinkdb.com/repository/centos/8/x86_64/\n\
-gpgkey=https://download2.rethinkdb.com/repository/raw/pubkey.gpg\n\
+baseurl=https://download.rethinkdb.com/repository/centos/8/x86_64/\n\
+gpgkey=https://download.rethinkdb.com/repository/raw/pubkey.gpg\n\
 gpgcheck=1\n' >> /etc/yum.repos.d/rethinkdb.repo
 
 RUN yum install -y rethinkdb-$RETHINKDB_PACKAGE_VERSION \
