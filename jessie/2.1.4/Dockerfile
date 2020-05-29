@@ -3,9 +3,9 @@ FROM debian:jessie-slim
 MAINTAINER Daniel Alan Miller <dalanmiller@rethinkdb.com>
 
 # Add the RethinkDB repository and public key
-# "RethinkDB Packaging <packaging@rethinkdb.com>" http://download.rethinkdb.com/apt/pubkey.gpg
-RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 1614552E5765227AEC39EFCFA7E00EF33A8F2399
-RUN echo "deb http://download.rethinkdb.com/apt jessie main" > /etc/apt/sources.list.d/rethinkdb.list
+# "RethinkDB Packaging <packaging@rethinkdb.com>" https://download.rethinkdb.com/repository/raw/pubkey.gpg
+RUN apt-key adv --keyserver pgp.mit.edu --recv-keys "539A 3A8C 6692 E6E3 F69B 3FE8 1D85 E93F 801B B43F"
+RUN echo "deb https://download.rethinkdb.com/repository/debian-jessie jessie main" > /etc/apt/sources.list.d/rethinkdb.list
 
 ENV RETHINKDB_PACKAGE_VERSION 2.1.4~0jessie
 
