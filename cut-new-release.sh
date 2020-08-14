@@ -5,7 +5,7 @@ NEW_VERSION=$1
 SUFFIX=$2
 
 # packages for them to downloads.rethinkdb.com
-DISTROS="xenial bionic disco eoan centos7 centos8 jessie stretch buster"
+DISTROS="focal xenial bionic disco eoan centos7 centos8 jessie stretch buster trusty"
 
 function bootstrap_and_build {
   for DISTRO in $DISTROS; do

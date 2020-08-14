@@ -1,13 +1,13 @@
-FROM ubuntu:eoan
+FROM ubuntu:focal
 
 RUN apt-get -qqy update \
     && apt-get install -y --no-install-recommends ca-certificates gnupg2 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-key adv --keyserver keys.gnupg.net --recv-keys "539A3A8C6692E6E3F69B3FE81D85E93F801BB43F" \
-    && echo "deb https://download.rethinkdb.com/repository/ubuntu-eoan eoan main" > /etc/apt/sources.list.d/rethinkdb.list
+    && echo "deb https://download.rethinkdb.com/repository/ubuntu-focal focal main" > /etc/apt/sources.list.d/rethinkdb.list
 
-ENV RETHINKDB_PACKAGE_VERSION 2.3.7~0eoan
+ENV RETHINKDB_PACKAGE_VERSION 2.4.0~0focal
 
 RUN apt-get -qqy update \
 	&& apt-get install -y rethinkdb=$RETHINKDB_PACKAGE_VERSION \
