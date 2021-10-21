@@ -4,7 +4,7 @@ MAINTAINER Daniel Alan Miller <dalanmiller@rethinkdb.com>
 
 # Add the RethinkDB repository and public key
 # "RethinkDB Packaging <packaging@rethinkdb.com>" https://download.rethinkdb.com/repository/raw/pubkey.gpg
-RUN apt-key adv --keyserver pgp.mit.edu --recv-keys "539A3A8C6692E6E3F69B3FE81D85E93F801BB43F"
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "539A3A8C6692E6E3F69B3FE81D85E93F801BB43F"
 RUN echo "deb https://download.rethinkdb.com/repository/debian-jessie jessie main" > /etc/apt/sources.list.d/rethinkdb.list
 
 ENV RETHINKDB_PACKAGE_VERSION 2.1.3~0jessie
