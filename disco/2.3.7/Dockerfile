@@ -4,7 +4,7 @@ RUN apt-get -qqy update \
     && apt-get install -y --no-install-recommends ca-certificates gnupg2 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-key adv --keyserver keys.gnupg.net --recv-keys "539A3A8C6692E6E3F69B3FE81D85E93F801BB43F" \
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "539A3A8C6692E6E3F69B3FE81D85E93F801BB43F" \
     && echo "deb https://download.rethinkdb.com/repository/ubuntu-disco disco main" > /etc/apt/sources.list.d/rethinkdb.list
 
 ENV RETHINKDB_PACKAGE_VERSION 2.3.7~0disco
