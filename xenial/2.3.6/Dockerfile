@@ -4,7 +4,7 @@ RUN apt-get update -qqy \
     && apt-get install -y --no-install-recommends apt-transport-https ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 1D85E93F801BB43F \
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1D85E93F801BB43F \
     && echo "deb https://download.rethinkdb.com/repository/ubuntu-xenial xenial main" > /etc/apt/sources.list.d/rethinkdb.list
 
 ENV RETHINKDB_PACKAGE_VERSION 2.3.6~0xenial
