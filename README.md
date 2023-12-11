@@ -27,6 +27,7 @@ After creating a commit for the new release package using `./cut-new-release.sh`
 
    # if package version includes a suffix like "+1",
    # pass that suffix as the second argument
+   # Note: It's unclear if "suffix" actually does what you want -- read cut-new-release.sh
    ./cut-new-release.sh 2.3.7 +1
    ```
 
