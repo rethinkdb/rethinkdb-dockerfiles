@@ -41,5 +41,5 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-# bootstrap_and_build;
+bootstrap_and_build;
 commit_and_tag;
