@@ -10,18 +10,20 @@ https://github.com/docker-library/docs/blob/master/rethinkdb/README.md
 
 The following base images are supported for containerized RethinkDB servers.
 
-* Ubuntu Xenial
-* Ubuntu Bionic
-* Ubuntu Disco
-* Ubuntu Eoan
-* CentOs 7
-* CentOs 8
+* Ubuntu Xenial, Bionic, Focal, Jammy, ...
+* Debian Bookworm, Bullseye, ...
+* CentOS 7
+* Rocky/Alma 8
+* Rocky/Alma 9
 
 ## Procedure for updating
 
-After creating a commit for the new release package using `./cut-new-release.sh`:
+After creating a commit and tag for the new release package using `./cut-new-release.sh`:
 
    ```bash
+   # (You might want to edit the script to use "sudo docker" or comment
+   # out the docker lines.)
+
    # example
    ./cut-new-release.sh 2.3.7
 
