@@ -12,21 +12,31 @@ function bootstrap_and_build {
     if [ -d "$DISTRO/$NEW_VERSION" ]; then
       echo "$DISTRO/$NEW_VERSION already exists... Skipping Dockerfile bootstrap"
     else
+      # What's the point of $SUFFIX?  It doesn't do anything if
+      # $DISTRO/$NEW_VERSION already exists!  Probably, that is a bug.
+      # You might want to look at the file history.  Maybe it never
+      # got used.
+
       if [ -f "$DISTRO/$BASE_VERSION/Dockerfile" ]; then
         mkdir "./$DISTRO/$NEW_VERSION"
         sed -e "s/$BASE_VERSION/$NEW_VERSION$SUFFIX/" "./$DISTRO/$BASE_VERSION/Dockerfile" > "./$DISTRO/$NEW_VERSION/Dockerfile"
+        docker build --no-cache -t "rethinkdb:$DISTRO-$NEW_VERSION$SUFFIX" "$DISTRO/$NEW_VERSION"
       fi
+
+      # RPM distros look like below:
       if [ -f "$DISTRO/$BASE_VERSION/aarch64/Dockerfile" ]; then
         mkdir -p "./$DISTRO/$NEW_VERSION/aarch64"
         sed -e "s/$BASE_VERSION/$NEW_VERSION$SUFFIX/" "./$DISTRO/$BASE_VERSION/aarch64/Dockerfile" > "./$DISTRO/$NEW_VERSION/aarch64/Dockerfile"
+        # This is just for testing -- right now we ASSUME the developer is running x86_64.
+        # docker build --no-cache -t "rethinkdb:$DISTRO-$NEW_VERSION$SUFFIX" "$DISTRO/$NEW_VERSION/aarch64"
       fi
       if [ -f "$DISTRO/$BASE_VERSION/x86_64/Dockerfile" ]; then
         mkdir -p "./$DISTRO/$NEW_VERSION/x86_64"
         sed -e "s/$BASE_VERSION/$NEW_VERSION$SUFFIX/" "./$DISTRO/$BASE_VERSION/x86_64/Dockerfile" > "./$DISTRO/$NEW_VERSION/x86_64/Dockerfile"
+        docker build --no-cache -t "rethinkdb:$DISTRO-$NEW_VERSION$SUFFIX" "$DISTRO/$NEW_VERSION/x86_64"
       fi
     fi
 
-    docker build --no-cache -t "rethinkdb:$DISTRO-$NEW_VERSION$SUFFIX" "$DISTRO/$NEW_VERSION$SUFFIX"
   done
 }
 
