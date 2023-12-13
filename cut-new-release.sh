@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 
-BASE_VERSION=2.4.3
+BASE_VERSION=2.4.4
 NEW_VERSION=$1
 SUFFIX=$2
 
 # packages for them to downloads.rethinkdb.com
-DISTROS="alma8 alma9 bionic bookworm bullseye buster centos7 focal hirsute impish jammy lunar jessie rocky8 rocky9 stretch trusty xenial"
+DISTROS="alma8 alma9 bionic bookworm bullseye buster centos7 focal hirsute impish jammy jessie lunar mantic rocky8 rocky9 stretch trusty xenial"
 
 function bootstrap_and_build {
   for DISTRO in $DISTROS; do
